@@ -5,16 +5,23 @@ function getComputerChoice(random){
     var choice = ['rock','papper','scissors'];
     return choice[random];
 }
-let youWin = false;
-function playerRound(playerSelection,computerSelection){
-    if (playerSelection==='rock' && computerSelection === 'scissors') {
-        youWin = true;
-    } 
-    if(playerSelection=== 'papper' && computerSelection === 'rock'){
-        youwin = true;
+
+function playRound(playerSelection,computerSelection){
+    if(playerSelection===computerSelection){
+        return 'tie';
     }
-    if(playerSelection==='scissor' && computerSelection === 'papper'){
-        youWin = true;
+    if (playerSelection!=computerSelection && computerSelection === 'scissors' && computerSelection != 'rock' && playerSelection !='papper') {
+        var result = playerSelection + " Beats " + computerSelection;
+        return result;
+    } 
+    if(playerSelection!=computerSelection && computerSelection === 'rock' && computerSelection != 'papper' && playerSelection !='scissors'){
+        result =playerSelection + " Beats " + computerSelection ;
+        return result;
+        
+    }
+    if(playerSelection!=computerSelection && computerSelection === 'papper' && computerSelection != 'scissors' && playerSelection !='rock'){
+        result =playerSelection + " Beats " + computerSelection;
+        return result;
         
     }
     if (playerSelection!=computerSelection && computerSelection === 'scissors' && computerSelection != 'rock') {
