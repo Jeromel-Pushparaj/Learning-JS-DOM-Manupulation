@@ -48,7 +48,6 @@ function popCelebration(elementId, showTime) {
         pop.style.display = 'block';
     }, showTime);
 
-    // Set a timeout to show the element after the specified hide time
 
     pop.style.display = 'none';
 
@@ -67,7 +66,7 @@ function styleChange(button){
     }
     if(youWin == true){
         instructionsElement.innerHTML = `${playerSelection} beats ${computerSelection},<span class = "victory"> you win!</span>`;
-        popCelebration('.pop',2000)
+        popCelebration('.pop',20)
 
     }
     else{
