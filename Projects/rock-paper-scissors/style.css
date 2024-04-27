@@ -27,6 +27,10 @@ button#rock{
     align-self: center;
     background-image: url(Images/icons8-rock-80.png);
 }
+button#rock:hover{
+    background-color: rgb(0, 255, 234);
+    border-radius: 50%;
+}
 button#papper{
     grid-column: 2/3;
     grid-row: 2/3;
@@ -34,12 +38,20 @@ button#papper{
     align-self: center;
     background-image: url(Images/icons8-paper-plane-64.png);
 }
+button#papper:hover{
+    background-color: rgb(234, 0, 255);
+    border-radius: 50%;
+}
 button#scissor{
     grid-column: 3/4;
     grid-row: 2/3;
     justify-self: center;
     align-self: center;
     background-image: url(Images/icons8-scissors-64.png);
+}
+button#scissor:hover{
+    background-color: rgb(0, 255, 76);
+    border-radius: 50%;
 }
 
 .message{
@@ -52,4 +64,10 @@ button#scissor{
     grid-row: 2/3;
     justify-self: center;
     align-self: center;
+}
+.score{
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: center;
+
 }

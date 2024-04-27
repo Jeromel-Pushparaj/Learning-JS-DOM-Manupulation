@@ -22,8 +22,19 @@ function playerRound(button){
 
 }
 
+function styleChange(button){
+    let playerSelection = button.id;
+    // let instructionElement = document.getElementsByClassName("instructions");
+    // instructionElement.innerHTML = "New text!";
 
+    // let messageElement = document.getElementsByClassName("message")[0];
+    // const para = document.createElement("p");
+    // para.innerHTML = "This is a paragraph.";
+    // messageElement.appendChild(para);
+}
 var buttons = document.querySelectorAll('button');
 buttons = buttons.forEach(button => button.addEventListener('click', function() {
-    playerRound(button)
+    styleChange(button);
 }));
+
+
