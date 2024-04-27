@@ -49,7 +49,7 @@ function styleChange(button){
         instructionsElement.innerHTML = `tie! you both picked ${playerSelection}`;
     }
     if(youWin == true){
-        instructionsElement.innerHTML = `${playerSelection} beats ${computerSelection}, you win!`;
+        instructionsElement.innerHTML = `${playerSelection} beats ${computerSelection},<> you win!`;
     }
     else{
         instructionsElement.innerHTML = `${computerSelection} beats ${playerSelection}, you loosed!`;
