@@ -19,18 +19,26 @@ function playerRound(button){
         youWin = true;
     }
     console.log(`p:${playerSelection}: c:${computerSelection}`,youWin);
+    return youWin;
 
 }
 
 function styleChange(button){
     let playerSelection = button.id;
-    // let instructionElement = document.getElementsByClassName("instructions");
-    // instructionElement.innerHTML = "New text!";
-
-    // let messageElement = document.getElementsByClassName("message")[0];
-    // const para = document.createElement("p");
-    // para.innerHTML = "This is a paragraph.";
-    // messageElement.appendChild(para);
+    let computerSelection = getComputerChoice();
+    let youWin = playerRound(button);
+    let instructionsElement = document.getElementsByClassName("instructions")[0];
+    // Change the content of the element
+    if(playerSelection == computerSelection){
+        instructionsElement.innerHTML = "tie! you too choose the same";
+    }
+    if(youWin == true){
+        instructionsElement.innerHTML = `${playerSelection} beats ${computerSelection}, you win!`;
+    }
+    else{
+        instructionsElement.innerHTML = `${computerSelection} beats ${playerSelection}, you loosed!`;
+    }
+    
 }
 var buttons = document.querySelectorAll('button');
 buttons = buttons.forEach(button => button.addEventListener('click', function() {
