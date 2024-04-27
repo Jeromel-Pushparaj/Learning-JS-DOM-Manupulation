@@ -38,6 +38,23 @@ function displayScore(youWin){
     }
     scoreElement.innerHTML = `Computer:${scoreComputer} player:${scorePlayer}`;
 }
+function popCelebration(elementId, showTime) {
+    // Get the element by its ID
+    let pop = document.querySelector(elementId);
+
+
+    // Set a timeout to hide the element after the specified show time
+    setTimeout(function() {
+        pop.style.display = 'block';
+    }, showTime);
+
+    // Set a timeout to show the element after the specified hide time
+
+    pop.style.display = 'none';
+
+}
+
+
 
 function styleChange(button){
     let playerSelection = button.id;
@@ -50,7 +67,8 @@ function styleChange(button){
     }
     if(youWin == true){
         instructionsElement.innerHTML = `${playerSelection} beats ${computerSelection},<span class = "victory"> you win!</span>`;
-        document.querySelector('.pop').style.display = 'block';
+        popCelebration('.pop',2000)
+
     }
     else{
         instructionsElement.innerHTML = `${computerSelection} beats ${playerSelection},<span class = "lost"> you loosed! </span>`;

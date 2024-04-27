@@ -83,4 +83,12 @@ button#scissor:hover{
 }
 .pop{
     display: none;
+    position: fixed;
+
+}
+.pop1{
+    display: none;
+    position: fixed;
+    left: 10px;
+    margin-right: -10px;
 }
