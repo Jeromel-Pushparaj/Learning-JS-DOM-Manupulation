@@ -21,12 +21,13 @@ function playerRound(button){
     }
     let scorePlayer = 0;
     let scoreComputer = 0;
-    scoreElement.innerHTML = `Computer:${scoreComputer} player:${scorePlayer}`;
+    
     if(youWin==true){
-        scoreElement.innerHTML = `Computer:${scoreComputer} player:${scorePlayer+1}`;
+        scorePlayer = scorePlayer + 1;
     }else{
-        scoreElement.innerHTML = `Computer:${scoreComputer+1} player:${scorePlayer}`;
+        scoreComputer = scoreComputer + 1;
     }
+    scoreElement.innerHTML = `Computer:${scoreComputer} player:${scorePlayer}`;
     console.log(`p:${playerSelection}: c:${computerSelection}`,youWin);
     return youWin;
 
