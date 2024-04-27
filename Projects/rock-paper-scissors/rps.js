@@ -49,10 +49,11 @@ function styleChange(button){
         instructionsElement.innerHTML = `tie! you both picked ${playerSelection}`;
     }
     if(youWin == true){
-        instructionsElement.innerHTML = `${playerSelection} beats ${computerSelection},<> you win!`;
+        instructionsElement.innerHTML = `${playerSelection} beats ${computerSelection},<span class = "victory"> you win!</span>`;
+        document.querySelector('.pop').style.display = 'block';
     }
     else{
-        instructionsElement.innerHTML = `${computerSelection} beats ${playerSelection}, you loosed!`;
+        instructionsElement.innerHTML = `${computerSelection} beats ${playerSelection},<span class = "lost"> you loosed! </span>`;
     }
     
 }

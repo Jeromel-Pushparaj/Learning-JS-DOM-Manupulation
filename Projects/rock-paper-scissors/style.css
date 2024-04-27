@@ -6,6 +6,10 @@
     grid-template-rows: 100px 50vh;
     
 }
+p{
+    font-size: large;
+    font-weight: bolder;
+}
 button {
     width: 180px;
     height: 100px;
@@ -70,4 +74,13 @@ button#scissor:hover{
     justify-self: center;
     align-self: center;
 
+}
+.victory{
+    color: purple;
+}
+.lost{
+    color: rgb(255, 0, 0);
+}
+.pop{
+    display: none;
 }
