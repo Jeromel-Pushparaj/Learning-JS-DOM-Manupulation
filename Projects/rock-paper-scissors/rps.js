@@ -8,6 +8,7 @@ function getComputerChoice(){
 function playerRound(button){
     let playerSelection = button.id;
     let computerSelection = getComputerChoice();
+    let scoreElement = document.getElementsByClassName("score")[0];
     let youWin = false;
     if (playerSelection==='rock' && computerSelection === 'scissor') {
         youWin = true;
@@ -17,6 +18,14 @@ function playerRound(button){
     }
     if(playerSelection==='scissor' && computerSelection === 'papper'){
         youWin = true;
+    }
+    let scorePlayer = 0;
+    let scoreComputer = 0;
+    scoreElement.innerHTML = `Computer:${scoreComputer} player:${scorePlayer}`;
+    if(youWin==true){
+        scoreElement.innerHTML = `Computer:${scoreComputer} player:${scorePlayer+1}`;
+    }else{
+        scoreElement.innerHTML = `Computer:${scoreComputer+1} player:${scorePlayer}`;
     }
     console.log(`p:${playerSelection}: c:${computerSelection}`,youWin);
     return youWin;
@@ -30,7 +39,7 @@ function styleChange(button){
     let instructionsElement = document.getElementsByClassName("instructions")[0];
     // Change the content of the element
     if(playerSelection == computerSelection){
-        instructionsElement.innerHTML = "tie! you too choose the same";
+        instructionsElement.innerHTML = `tie! you both picked ${playerSelection}`;
     }
     if(youWin == true){
         instructionsElement.innerHTML = `${playerSelection} beats ${computerSelection}, you win!`;
