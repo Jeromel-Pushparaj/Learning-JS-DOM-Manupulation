@@ -5,17 +5,7 @@ function getComputerChoice(){
     return choice[randomInt];
 }
 
-let scorePlayer = 0;
-let scoreComputer = 0;
-function getScore(youWIn){
-    let scoreElement = document.getElementsByClassName("score")[0];
-    if(youWin==true){
-        scorePlayer = scorePlayer + 1;
-    }else{
-        scoreComputer = scoreComputer + 1;
-    }
-    scoreElement.innerHTML = `Computer:${scoreComputer} player:${scorePlayer}`;
-}
+
 
 function playerRound(button){
     let playerSelection = button.id;
@@ -31,10 +21,22 @@ function playerRound(button){
     if(playerSelection==='scissor' && computerSelection === 'papper'){
         youWin = true;
     }
-    getScore(youWin)
+    displayScore(youWin)
     console.log(`p:${playerSelection}: c:${computerSelection}`,youWin);
     return youWin;
 
+}
+
+let scorePlayer = 0;
+let scoreComputer = 0;
+function displayScore(youWin){
+    let scoreElement = document.getElementsByClassName("score")[0];
+    if(youWin==true){
+        scorePlayer = scorePlayer + 1;
+    }else{
+        scoreComputer = scoreComputer + 1;
+    }
+    scoreElement.innerHTML = `Computer:${scoreComputer} player:${scorePlayer}`;
 }
 
 function styleChange(button){
