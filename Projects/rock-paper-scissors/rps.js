@@ -1,3 +1,5 @@
+
+let numOfRound = prompt("Enter the How much Round?");
 function getComputerChoice(){
     var randomInt = Math.floor(Math.random()*3);
     console.log(randomInt);
@@ -8,8 +10,10 @@ function getComputerChoice(){
 
 
 function playerRound(button){
+    
     let playerSelection = button.id;
     let computerSelection = getComputerChoice();
+
 
     let youWin = false;
     if (playerSelection==='rock' && computerSelection === 'scissor') {
@@ -30,32 +34,22 @@ function playerRound(button){
 let scorePlayer = 0;
 let scoreComputer = 0;
 function displayScore(youWin){
+
     let scoreElement = document.getElementsByClassName("score")[0];
     if(youWin==true){
         scorePlayer = scorePlayer + 1;
     }else{
         scoreComputer = scoreComputer + 1;
     }
-    scoreElement.innerHTML = `Computer:${scoreComputer} player:${scorePlayer}`;
-}
-function popCelebration(elementId, showTime) {
-    // Get the element by its ID
-    let pop = document.querySelector(elementId);
-
-
-    // Set a timeout to hide the element after the specified show time
-    setTimeout(function() {
-        pop.style.display = 'block';
-    }, showTime);
-
-
-    pop.style.display = 'none';
-
+    scoreElement.innerHTML = `Computer:${scoreComputer} player:${scorePlayer}`; 
+    console.log(scoreComputer);
 }
 
 
 
+let roundTrack = 0;
 function styleChange(button){
+    console.log("I am enter to the loop");
     let playerSelection = button.id;
     let computerSelection = getComputerChoice();
     let youWin = playerRound(button);
@@ -66,17 +60,23 @@ function styleChange(button){
     }
     if(youWin == true){
         instructionsElement.innerHTML = `${playerSelection} beats ${computerSelection},<span class = "victory"> you win!</span>`;
-        popCelebration('.pop',20)
 
     }
     else{
         instructionsElement.innerHTML = `${computerSelection} beats ${playerSelection},<span class = "lost"> you loosed! </span>`;
-    }
-    
+    }    
 }
+
 var buttons = document.querySelectorAll('button');
 buttons = buttons.forEach(button => button.addEventListener('click', function() {
-    styleChange(button);
+        styleChange(button);
+        roundTrack++;
+        if(roundTrack == numOfRound){
+            window.location.reload();
+        }
+    
 }));
+
+
 
 
